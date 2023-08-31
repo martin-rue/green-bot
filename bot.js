@@ -29,7 +29,7 @@ export const turn = ({ minesRemaining, opponentUsedRadar }) => {
   state.position.y = Math.floor(Math.random()*10);
 
 
-  if(turn % 2 == 1 ){
+  if(state.turn % 2 == 1 ){
     if(opponentUsedRadar){
       if( mines.includes({position})){
         if(x=9){
@@ -56,7 +56,7 @@ export const turn = ({ minesRemaining, opponentUsedRadar }) => {
       if(state.mineRemaining>0){
         return layMine(state.position.x, state.position.y);
       } else {
-
+        return move(state.position.x, state.position.y);
       }
     }
   } else {
