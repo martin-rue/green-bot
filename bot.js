@@ -21,7 +21,7 @@ export const start = ({ radar }) => {
 export const turn = ({ minesRemaining, opponentUsedRadar }) => {
   state.turn += 1;
   // state.minesRemaining = minesRemaining;
-  // state.opponentUsedRadar = opponentUsedRadar;
+  state.opponentUsedRadar = opponentUsedRadar;
 
   // return move(state.position.x, state.position.y);
 
@@ -30,7 +30,7 @@ export const turn = ({ minesRemaining, opponentUsedRadar }) => {
 
 
   if(state.turn % 2 == 1 ){
-    if(opponentUsedRadar){
+    if(state.opponentUsedRadar){
       // if( state.mines.includes({state.position.x, })){
       //   if(state.position.x=9){
       //     state.position.x = state.position.x -2;
@@ -57,7 +57,6 @@ export const turn = ({ minesRemaining, opponentUsedRadar }) => {
         state.mineRemaining -=1;
         return layMine(state.position.x, state.position.y);
       } else {
-
         return move(state.position.x, state.position.y);
       }
     }
