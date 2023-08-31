@@ -31,27 +31,27 @@ export const turn = ({ minesRemaining, opponentUsedRadar }) => {
 
   if(state.turn % 2 == 1 ){
     if(opponentUsedRadar){
-      if( state.mines.includes({position})){
-        if(state.position.x=9){
-          state.position.x = state.position.x -2;
-        } else if(state.position.x=0){
-          state.position.x= state.position.x + 3;
-        } else {
-          state.position.x = state.position.x + 1;
-        }
+      // if( state.mines.includes({state.position.x, })){
+      //   if(state.position.x=9){
+      //     state.position.x = state.position.x -2;
+      //   } else if(state.position.x=0){
+      //     state.position.x= state.position.x + 3;
+      //   } else {
+      //     state.position.x = state.position.x + 1;
+      //   }
 
-        if(state.position.y=9){
-          state.position.y = state.position.y  -2;
-        } else if(state.position.y =0){
-          state.position.y= state.position.y + 3;
-        } else {
-          state.position.y= state.position.y + 1;
-        }
-         return move(state.position.x, state.position.y);
+      //   if(state.position.y=9){
+      //     state.position.y = state.position.y  -2;
+      //   } else if(state.position.y =0){
+      //     state.position.y= state.position.y + 3;
+      //   } else {
+      //     state.position.y= state.position.y + 1;
+      //   }
+      //    return move(state.position.x, state.position.y);
 
-      } else {
+      // } else {
         return move(state.position.x, state.position.y);
-      }
+      //}
     } else {
       if(state.mineRemaining>0){
         return layMine(state.position.x, state.position.y);
