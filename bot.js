@@ -1,5 +1,6 @@
 import { move, layMine, runRadar } from "./turns.js";
 import { readRadar } from "./radar.js";
+//Comment
 
 const state = {
   gridSize: 0,
